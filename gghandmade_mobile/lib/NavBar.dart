@@ -14,13 +14,10 @@ class _NavBarState extends State<NavBar> {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [  
-        ListTile(
-          title: Text('Bem-vindo!'),
-        ),
-
+        
           UserAccountsDrawerHeader(
-            accountName: Text('User: Grazi'), 
-            accountEmail: Text('Email: grazielimartins5@gmail.com'),
+            accountName: Text('Bem-vindo(a), Tania'), 
+            accountEmail: Text('bassoTania@gmail.com'),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(child: Image.network("https://th.bing.com/th/id/R.dbd163c9dc9fd68dd2273d31c2cd36f5?rik=MeBtXFOYk4%2bn2A&pid=ImgRaw&r=0",
               width: 90,
@@ -34,12 +31,11 @@ class _NavBarState extends State<NavBar> {
               ),
               fit: BoxFit.cover
             ),
+            
            ),
           
-
-
-
           ),
+         
         ],
 
       ),

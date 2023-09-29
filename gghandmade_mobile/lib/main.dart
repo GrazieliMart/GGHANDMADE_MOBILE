@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gghandmade_mobile/cart.dart';
 import 'home.dart';
+import 'cart.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -22,6 +24,7 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
       routes: {
         '/':(context) => Myhome(),
+        '/cart':(context) => Carrinho(),
 
       },
   
