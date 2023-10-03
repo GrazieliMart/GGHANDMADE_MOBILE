@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gghandmade_mobile/cadastro.dart';
 import 'package:gghandmade_mobile/cart.dart';
 import 'home.dart';
 import 'cart.dart';
@@ -19,15 +20,17 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 154, 91, 255))
       ),
-      home: MaterialApp(
-        
-        initialRoute: '/',
+      
+      
       routes: {
+        
+      
         '/':(context) => Myhome(),
+        '/cadastro':(context)=>Cadastro(),
         '/cart':(context) => Carrinho(),
 
       },
   
-      ),);
+      );
     
     }}

@@ -34,8 +34,7 @@ class _CarrinhoState extends State<Carrinho> {
         
       ),
       body:
-    
-      
+  
        Column(children: [
           SizedBox(height: 30),
           Row(
