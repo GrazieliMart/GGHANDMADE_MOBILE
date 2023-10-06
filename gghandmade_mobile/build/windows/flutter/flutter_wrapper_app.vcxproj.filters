@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\aluno\Downloads\GGHANDMADE_MOBILE-main\gghandmade_mobile\windows\flutter\ephemeral\cpp_client_wrapper\core_implementations.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aluno\Downloads\GGHANDMADE_MOBILE-main\gghandmade_mobile\windows\flutter\ephemeral\cpp_client_wrapper\standard_codec.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aluno\Downloads\GGHANDMADE_MOBILE-main\gghandmade_mobile\windows\flutter\ephemeral\cpp_client_wrapper\flutter_engine.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\aluno\Downloads\GGHANDMADE_MOBILE-main\gghandmade_mobile\windows\flutter\ephemeral\cpp_client_wrapper\flutter_view_controller.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\aluno\Downloads\GGHANDMADE_MOBILE-main\gghandmade_mobile\windows\flutter\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{9EF967E0-55B3-324D-B16E-FB19DCB37EB2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{10CC1995-1A40-3EF7-9FDE-15228AA50CE9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

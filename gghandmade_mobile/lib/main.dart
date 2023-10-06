@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gghandmade_mobile/cadastro.dart';
 import 'package:gghandmade_mobile/cart.dart';
 import 'home.dart';
-import 'cart.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -10,7 +10,7 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  
   @override
   Widget build(BuildContext context) {
     

@@ -1,18 +1,16 @@
 
 
 class Produto {
-  int _codigo = 0;
+
 
   String _nome = "";
   String _tipo = "";
   int _quantidade = 0;
   int _preco = 0;
 
-  Produto(this._codigo, this._nome);
+  Produto(this._nome, this._tipo, this._quantidade, this._preco);
 
- int get codigo => this._codigo;
 
- set codigo(int value) => this._codigo = value;
   get nome => this._nome;
 
   set nome(value) => this._nome = value;

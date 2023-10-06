@@ -14,11 +14,5 @@ class ProdutoRepo {
     _listaProdutos.remove(produto);
   }
 
-  //listar todos os alunos da lista
-  void imprimir() {
-    for (var i = 0; i < _listaProdutos.length; i++) {
-      print("RA: ${_listaProdutos[i].codigo}, Nome: ${_listaProdutos[i].nome}");
-    }
-    print("===============================");
-  }
+
 }

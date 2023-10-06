@@ -14,19 +14,26 @@ class AlteraProduto extends StatefulWidget {
 }
 
 class _AlteraProdutoState extends State<AlteraProduto> {
-  final campoCod = TextEditingController();
-  final campoNome = TextEditingController();
+
+final campoNome = TextEditingController();
+  final campoTipo = TextEditingController();
+  final campoQuantidade = TextEditingController();
+  final campoPreco = TextEditingController();
+
   GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
+
   List lista = ProdutoRepo.getListaProdutos;
+
   ProdutoRepo produtoRepo = new ProdutoRepo();
 
-  final FocusNode focoCPF = FocusNode();
+
   @override
   Widget build(BuildContext context) {
     inicializa();
     return Scaffold(
         appBar: AppBar(
           title: Text("Alterar"),
+           backgroundColor: Color.fromARGB(181, 177, 42, 255),
         ),
         body: Padding(
           padding: const EdgeInsets.all(10),
@@ -35,47 +42,134 @@ class _AlteraProdutoState extends State<AlteraProduto> {
               Form(
                 key: this._formKey,
                 child: Column(children: [
-                  TextFormField(
-                    controller: campoCod,
-                    keyboardType: TextInputType.number,
-                    inputFormatters: <TextInputFormatter>[
-                      FilteringTextInputFormatter.digitsOnly
-                    ],
-                    focusNode: focoCPF,
+                   TextFormField(
+                    controller: campoNome,
                     style: TextStyle(fontSize: 15),
                     decoration: InputDecoration(
-                      labelText: 'Código',
-                      border: OutlineInputBorder(),
-                      filled: true,
-                      fillColor: Color.fromARGB(255, 184, 206, 225),
-                    ),
+                      labelText: 'Nome',
+                      border: OutlineInputBorder(
+                        
+                          borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(color: Color.fromARGB(134, 174, 87, 255)),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Color.fromARGB(255, 174, 87, 255)),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        hoverColor: Color.fromARGB(82, 211, 144, 255),
+                        filled: true,
+                        fillColor: Color.fromARGB(0, 0, 0, 0),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 16.0),
+                        labelStyle: TextStyle(color: const Color.fromARGB(255, 54, 54, 54)), // Define a cor do texto do rótulo
+                      ),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return 'O código não pode ser vazio';
+                        return 'Name are Required';
                       } else {
-                        if (int.parse(campoCod.text) < 10) {
-                          return 'O código deve ser maior que 10';
+                        if (campoNome.text.length < 5) {
+                          return 'Name need have more than 5 caracters';
+                        }
+                      }
+                      return null;
+                    },
+                  ),
+                    SizedBox(height: 30),
+                  TextFormField(
+                    controller: campoTipo,
+                    keyboardType: TextInputType.text,
+                    
+                    style: TextStyle(fontSize: 15),
+                    decoration: InputDecoration(
+                      labelText: 'Tipo',
+                       border: OutlineInputBorder(
+                        
+                          borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(color: Color.fromARGB(134, 174, 87, 255)),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Color.fromARGB(255, 174, 87, 255)),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        hoverColor: Color.fromARGB(82, 211, 144, 255),
+                        filled: true,
+                        fillColor: Color.fromARGB(0, 0, 0, 0),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 16.0),
+                        labelStyle: TextStyle(color: const Color.fromARGB(255, 54, 54, 54)), // Define a cor do texto do rótulo
+                      ),
+                    
+                   
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Type are required';
+                      } else {
+                        if ((campoTipo.text.length) < 10) {
+                          return 'Type need have more than 10 caracters';
+                        }
+                      }
+                      return null;
+                    },
+                  ),
+                
+                 
+                  SizedBox(height: 30),
+                   TextFormField(
+                    controller: campoQuantidade,
+                    style: TextStyle(fontSize: 15),
+                    decoration: InputDecoration(
+                      labelText: 'Quantidade',
+                      border: OutlineInputBorder(
+                        
+                          borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(color: Color.fromARGB(134, 174, 87, 255)),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Color.fromARGB(255, 174, 87, 255)),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        hoverColor: Color.fromARGB(82, 211, 144, 255),
+                        filled: true,
+                        fillColor: Color.fromARGB(0, 0, 0, 0),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 16.0),
+                        labelStyle: TextStyle(color: const Color.fromARGB(255, 54, 54, 54)), // Define a cor do texto do rótulo
+                      ),
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return 'Quantity are Required';
+                      } else {
+                        if (campoQuantidade.text.length < 5) {
+                          return 'Quantity need have more than 5 caracters';
                         }
                       }
                       return null;
                     },
                   ),
                   SizedBox(height: 30),
-                  TextFormField(
-                    controller: campoNome,
+                   TextFormField(
+                    controller: campoPreco,
                     style: TextStyle(fontSize: 15),
                     decoration: InputDecoration(
-                      labelText: 'Nome',
-                      border: OutlineInputBorder(),
-                      filled: true,
-                      fillColor: Color.fromARGB(255, 184, 206, 225),
-                    ),
+                      labelText: 'Preço',
+                      border: OutlineInputBorder(
+                        
+                          borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(color: Color.fromARGB(134, 174, 87, 255)),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Color.fromARGB(255, 174, 87, 255)),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        hoverColor: Color.fromARGB(82, 211, 144, 255),
+                        filled: true,
+                        fillColor: Color.fromARGB(0, 0, 0, 0),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 16.0),
+                        labelStyle: TextStyle(color: const Color.fromARGB(255, 54, 54, 54)), // Define a cor do texto do rótulo
+                      ),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return 'O nome não pode ser vazio';
+                        return 'Priece are Required';
                       } else {
-                        if (campoNome.text.length < 5) {
-                          return 'O nome deve ter pelo menos 5 caracteres';
+                        if (campoPreco.text.length < 5) {
+                          return 'Price need have more than 5 caracters';
                         }
                       }
                       return null;
@@ -91,26 +185,39 @@ class _AlteraProdutoState extends State<AlteraProduto> {
                   ElevatedButton(
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-                          int cod = int.parse(campoCod.text);
+                        
                           String nome = campoNome.text;
-                          Produto a = new Produto(cod, nome);
+                          String tipo = campoTipo.text;
+                            int quantidade = int.parse(campoQuantidade.text);
+                              int preco = int.parse(campoPreco.text);
+                              
+                          Produto a = new Produto(nome, tipo, quantidade, preco);
+                         
                           lista[widget.indice] = a;
+                          print(widget.indice);
                           mostrarMsgSucesso();
                         }
                       },
                       child: Text(
                         'Alterar',
-                        style: TextStyle(fontSize: 15),
+                        style: TextStyle(fontSize: 15)
+                        ,
                       )),
                   SizedBox(width: 20),
                   ElevatedButton(
                       onPressed: () {
                         Navigator.pushNamed(context, '/');
                       },
-                      child: Text(
-                        'Voltar',
-                        style: TextStyle(fontSize: 15),
-                      )),
+                      child: Text("Alterar"),
+             style: ButtonStyle(
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(50)
+            )
+          )
+         ),
+                      
+                      ),
                 ],
               ),
               SizedBox(height: 30),
@@ -120,8 +227,11 @@ class _AlteraProdutoState extends State<AlteraProduto> {
   }
 
   void inicializa() {
-    campoCod.text = widget.produto.codigo.toString();
+
     campoNome.text = widget.produto.nome;
+    campoTipo.text = widget.produto.tipo;    
+    campoQuantidade.text = widget.produto.quantidade.toString();
+    campoPreco.text = widget.produto.preco.toString();
   }
 
   void mostrarMsgSucesso() {

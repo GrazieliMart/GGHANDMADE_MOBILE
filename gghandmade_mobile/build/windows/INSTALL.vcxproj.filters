@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\aluno\Downloads\GGHANDMADE_MOBILE-main\gghandmade_mobile\build\windows\CMakeFiles\e92b7e367b564dcb5109fb7f779920e7\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{9EF967E0-55B3-324D-B16E-FB19DCB37EB2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,28 @@
+^C:\USERS\ALUNO\DOWNLOADS\GGHANDMADE_MOBILE-MAIN\GGHANDMADE_MOBILE\BUILD\WINDOWS\CMAKEFILES\AB42BDC8D0CF833DB2C82C2EECC70CEC\FLUTTER_WINDOWS.DLL.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\Users\aluno\AppData\Local\flutter PROJECT_DIR=C:\Users\aluno\Downloads\GGHANDMADE_MOBILE-main\gghandmade_mobile FLUTTER_ROOT=C:\Users\aluno\AppData\Local\flutter FLUTTER_EPHEMERAL_DIR=C:\Users\aluno\Downloads\GGHANDMADE_MOBILE-main\gghandmade_mobile\windows\flutter\ephemeral PROJECT_DIR=C:\Users\aluno\Downloads\GGHANDMADE_MOBILE-main\gghandmade_mobile FLUTTER_TARGET=C:\Users\aluno\Downloads\GGHANDMADE_MOBILE-main\gghandmade_mobile\lib\main.dart DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==,RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC9hNzk0Y2YyNjgxYzZjOWZlN2IyNjBlMGU4NGRlOTYyOThkYzljMThiLw== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=C:\Users\aluno\Downloads\GGHANDMADE_MOBILE-main\gghandmade_mobile\.dart_tool\package_config.json C:/Users/aluno/AppData/Local/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\ALUNO\DOWNLOADS\GGHANDMADE_MOBILE-MAIN\GGHANDMADE_MOBILE\BUILD\WINDOWS\CMAKEFILES\E2C5401F1EAEC369BD876C87B6F4281F\FLUTTER_ASSEMBLE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\ALUNO\DOWNLOADS\GGHANDMADE_MOBILE-MAIN\GGHANDMADE_MOBILE\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/aluno/Downloads/GGHANDMADE_MOBILE-main/gghandmade_mobile/windows -BC:/Users/aluno/Downloads/GGHANDMADE_MOBILE-main/gghandmade_mobile/build/windows --check-stamp-file C:/Users/aluno/Downloads/GGHANDMADE_MOBILE-main/gghandmade_mobile/build/windows/flutter/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

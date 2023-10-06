@@ -11,71 +11,181 @@ class Cadastro extends StatefulWidget {
 }
 
 class _CadastroState extends State<Cadastro> {
-  final campoCod = TextEditingController();
   final campoNome = TextEditingController();
+  final campoTipo = TextEditingController();
+  final campoQuantidade = TextEditingController();
+  final campoPreco = TextEditingController();
   GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
-
+   final FocusNode focoNome = FocusNode();
   ProdutoRepo produtoRepo = new ProdutoRepo();
 
-  final FocusNode focoCPF = FocusNode();
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Cadastro"),
+          title: Text("Dev Tols"),
+           backgroundColor: Color.fromARGB(181, 177, 42, 255),
         ),
         body: Padding(
           padding: const EdgeInsets.all(10),
           child: Column(
             children: [
-              Form(
+               Form(
                 key: this._formKey,
-                child: Column(children: [
-                  TextFormField(
-                    controller: campoCod,
-                    keyboardType: TextInputType.number,
-                    inputFormatters: <TextInputFormatter>[
-                      FilteringTextInputFormatter.digitsOnly
-                    ],
-                    focusNode: focoCPF,
-                    style: TextStyle(fontSize: 15),
-                    decoration: InputDecoration(
-                      labelText: 'Código',
-                      border: OutlineInputBorder(),
-                      filled: true,
-                      fillColor: Color.fromARGB(255, 184, 206, 225),
-                    ),
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'O código não pode ser vazio';
-                      } else {
-                        if (int.parse(campoCod.text) < 10) {
-                          return 'O código deve ser maior que 10';
-                        }
-                      }
-                      return null;
-                    },
-                  ),
-                  SizedBox(height: 30),
-                  TextFormField(
-                    controller: campoNome,
-                    style: TextStyle(fontSize: 15),
-                    decoration: InputDecoration(
+                child: Column(
+                  children: [
+                    TextFormField(
+                      controller: campoNome,
+                      keyboardType: TextInputType.text,
+                     
+                     focusNode: focoNome,
+                     style: TextStyle(fontSize: 15),
+                     decoration: InputDecoration (
                       labelText: 'Nome',
-                      border: OutlineInputBorder(),
-                      filled: true,
-                      fillColor: Color.fromARGB(255, 184, 206, 225),
-                    ),
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'O nome não pode ser vazio';
-                      } else {
-                        if (campoNome.text.length < 5) {
-                          return 'O nome deve ter pelo menos 5 caracteres';
+                      border: OutlineInputBorder(
+                        
+                          borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(color: Color.fromARGB(134, 174, 87, 255)),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Color.fromARGB(255, 174, 87, 255)),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        hoverColor: Color.fromARGB(82, 211, 144, 255),
+                        filled: true,
+                        fillColor: Color.fromARGB(0, 0, 0, 0),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 16.0),
+                        labelStyle: TextStyle(color: const Color.fromARGB(255, 54, 54, 54)), // Define a cor do texto do rótulo
+                      ),
+                     validator: (value){
+                      if (value!.isEmpty){
+                        return 'Name cant be null';
+                      } else 
+                      {
+                        if 
+                        (campoNome.text.length<5)
+                        {
+                        return 'Name need have more than 5 caracters';  
                         }
                       }
-                      return null;
-                    },
+                    
+                     return null;
+                     } ,
+                    ),
+                    SizedBox(height: 50),
+                    
+                    TextFormField(
+                    controller: campoTipo,
+                     keyboardType: TextInputType.text,
+                     style: TextStyle(fontSize: 15),
+                     decoration: InputDecoration (
+                      labelText: 'Tipo',
+                       border: OutlineInputBorder(
+                        
+                          borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(color: Color.fromARGB(134, 174, 87, 255)),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Color.fromARGB(255, 174, 87, 255)),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        hoverColor: Color.fromARGB(82, 211, 144, 255),
+                        filled: true,
+                        fillColor: Color.fromARGB(0, 0, 0, 0),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 16.0),
+                        labelStyle: TextStyle(color: const Color.fromARGB(255, 54, 54, 54)), // Define a cor do texto do rótulo
+                      ),
+                     validator: (value){
+                      if (value!.isEmpty){
+                        return 'Type cant be null';
+                      } else 
+                      {
+                        if (campoTipo.text.length<5)
+                        {
+                        return 'Type need have more than 5 caracters';  
+                        }
+                      }
+                     
+                     return null;
+                     } ,
+
+                    ),
+                      SizedBox(height: 50),
+                
+                    TextFormField(
+                    controller: campoQuantidade,    
+                    keyboardType: TextInputType.number,
+                     style: TextStyle(fontSize: 15),
+                     decoration: InputDecoration (
+                      labelText: 'Quantity',
+                      border: OutlineInputBorder(
+                        
+                          borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(color: Color.fromARGB(134, 174, 87, 255)),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Color.fromARGB(255, 174, 87, 255)),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        hoverColor: Color.fromARGB(82, 211, 144, 255),
+                        filled: true,
+                        fillColor: Color.fromARGB(0, 0, 0, 0),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 16.0),
+                        labelStyle: TextStyle(color: const Color.fromARGB(255, 54, 54, 54)), // Define a cor do texto do rótulo
+                      ),
+                     validator: (value){
+                      if (value!.isEmpty){
+                        return 'Quantity cant be null';
+                      } else 
+                      {
+                        if (int.parse(campoQuantidade.text)<5)
+                        {
+                        return 'Quantity need have more than 5 caracters';  
+                        }
+                      }
+                     
+                     return null;
+                     } ,
+
+                    ),
+                      SizedBox(height: 50),
+                    
+                    TextFormField(
+                    controller: campoPreco,
+                    keyboardType: TextInputType.number,
+                     style: TextStyle(fontSize: 15),
+                     decoration: InputDecoration (
+                      labelText: 'Priece',
+                     border: OutlineInputBorder(
+                        
+                          borderRadius: BorderRadius.circular(20),
+                            borderSide: BorderSide(color: Color.fromARGB(134, 174, 87, 255)),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Color.fromARGB(255, 174, 87, 255)),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        hoverColor: Color.fromARGB(82, 211, 144, 255),
+                        filled: true,
+                        fillColor: Color.fromARGB(0, 0, 0, 0),
+                        contentPadding: EdgeInsets.symmetric(horizontal: 16.0),
+                        labelStyle: TextStyle(color: const Color.fromARGB(255, 54, 54, 54)), // Define a cor do texto do rótulo
+                      ),
+                     validator: (value){
+                      if (value!.isEmpty){
+                        return 'Priece cant be null';
+                      } else 
+                      {
+                        if (int.parse(campoPreco.text)<5)
+                        {
+                        return 'Priece need have more than 5 caracthers';  
+                        }
+                      }
+                     
+                     return null;
+                     } ,
+
                   ),
                   SizedBox(height: 30),
                 ]),
@@ -84,34 +194,52 @@ class _CadastroState extends State<Cadastro> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          int cod = int.parse(campoCod.text);
-                          String nome = campoNome.text;
-                          Produto p = new Produto(cod, nome);
-                          produtoRepo.adicionar(p);
-                          produtoRepo.imprimir();
+                        ElevatedButton(onPressed: () {
+                      if (_formKey.currentState!.validate())
+                      {  
+                        String nome = campoNome.text;
+                        String tipo = campoTipo.text; 
+                        int quantidade= int.parse(campoQuantidade.text);
+                        int preco = int.parse(campoPreco.text);
+                       
+                     
+                        Produto a = Produto(nome, tipo, quantidade, preco);
+                          produtoRepo.adicionar(a);
                           limparCampos();
-                          mostrarMsgSucesso();
-                          setState(() {});
-                        }
-                      },
-                      child: Text(
-                        'Cadastrar',
-                        style: TextStyle(fontSize: 15),
-                      )),
-                  SizedBox(width: 20),
+  _formKey.currentState!.reset();
+  mostrarMsgSucesso();
+                           setState(() {
+                          
+                        });
+                      }
+                    }, 
+                    
+                   child: Text("Cadastrar"),
+             style: ButtonStyle(
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(50)
+            )
+          )
+         ),
+                    
+                    ),
+                    
+                    SizedBox(height: 30,),
                   ElevatedButton(
                       onPressed: () {
                         limparCampos();
                         _formKey.currentState!.reset();
                         setState(() {});
                       },
-                      child: Text(
-                        'Limpar',
-                        style: TextStyle(fontSize: 15),
-                      )),
+                      child: Text("Limpar campos"),
+             style: ButtonStyle(
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(50)
+            )
+          )
+         ),),
                 ],
               ),
               SizedBox(height: 30),
@@ -121,9 +249,13 @@ class _CadastroState extends State<Cadastro> {
   }
 
   void limparCampos() {
-    campoCod.clear();
+    
     campoNome.clear();
-    focoCPF.requestFocus();
+    campoTipo.clear();
+    campoQuantidade.clear();
+    campoPreco.clear();
+
+    
   }
 
   void mostrarMsgSucesso() {

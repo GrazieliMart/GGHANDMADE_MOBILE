@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'NavBar.dart';
-import 'home.dart';
+
 
 class Carrinho extends StatefulWidget {
   const Carrinho({super.key});
