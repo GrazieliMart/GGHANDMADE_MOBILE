@@ -1,3 +1,5 @@
-2023/10/03-10:00:11.332 45d0 Reusing MANIFEST C:\Users\aluno\AppData\Local\Temp\flutter_tools.1512098a\flutter_tools_chrome_device.2905a43\Default\Site Characteristics Database/MANIFEST-000001
-2023/10/03-10:00:11.334 45d0 Recovering log #3
-2023/10/03-10:00:11.335 45d0 Reusing old log C:\Users\aluno\AppData\Local\Temp\flutter_tools.1512098a\flutter_tools_chrome_device.2905a43\Default\Site Characteristics Database/000003.log 
+2023/10/10-10:27:14.545 26f4 Log #3: 4 ops saved to Table #4 OK
+2023/10/10-10:27:14.547 26f4 Archiving C:\Users\aluno\AppData\Local\Temp\flutter_tools.1bb916eb\flutter_tools_chrome_device.1af031bd\Default\Site Characteristics Database/000003.log: OK
+2023/10/10-10:27:14.547 26f4 Table #4: 4 entries OK
+2023/10/10-10:27:14.548 26f4 Archiving C:\Users\aluno\AppData\Local\Temp\flutter_tools.1bb916eb\flutter_tools_chrome_device.1af031bd\Default\Site Characteristics Database/MANIFEST-000001: OK
+2023/10/10-10:27:14.554 26f4 **** Repaired leveldb C:\Users\aluno\AppData\Local\Temp\flutter_tools.1bb916eb\flutter_tools_chrome_device.1af031bd\Default\Site Characteristics Database; recovered 1 files; 257 bytes. Some data may have been lost. ****

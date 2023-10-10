@@ -177,9 +177,9 @@ class _CadastroState extends State<Cadastro> {
                         return 'Priece cant be null';
                       } else 
                       {
-                        if (int.parse(campoPreco.text)<5)
+                        if (int.parse(campoPreco.text)<3)
                         {
-                        return 'Priece need have more than 5 caracthers';  
+                        return 'Priece need have more than 3 caracthers';  
                         }
                       }
                      
@@ -225,8 +225,21 @@ class _CadastroState extends State<Cadastro> {
                     
                     ),
                     
-                    SizedBox(height: 30,),
-                  ElevatedButton(
+                    SizedBox(width: 30,),
+                      ElevatedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/');
+            },
+            child: Text("Home"),
+             style: ButtonStyle(
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(50)
+            )
+          )
+         ),
+          ),
+                 /* ElevatedButton(
                       onPressed: () {
                         limparCampos();
                         _formKey.currentState!.reset();
@@ -239,7 +252,7 @@ class _CadastroState extends State<Cadastro> {
               borderRadius: BorderRadius.circular(50)
             )
           )
-         ),),
+         ),),*/
                 ],
               ),
               SizedBox(height: 30),

@@ -42,7 +42,7 @@ class _HomeState extends State<Myhome> {
         preferredSize: Size.fromHeight(80.0),
         child: AppBar(
           backgroundColor: Color.fromARGB(181, 177, 42, 255),
-          actions: [
+          /*actions: [
             IconButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/account');
@@ -55,7 +55,7 @@ class _HomeState extends State<Myhome> {
               },
               icon: Icon(Icons.badge),
             ),
-          ],
+          ],*/
           flexibleSpace: Container(
             height: 200.0,
             child: Row(
@@ -182,7 +182,7 @@ class _HomeState extends State<Myhome> {
             },
             padding: EdgeInsets.all(7),
           ),
-          ElevatedButton(
+          /*ElevatedButton(
             onPressed: () {
               Navigator.pushNamed(context, '/');
             },
@@ -194,7 +194,7 @@ class _HomeState extends State<Myhome> {
             )
           )
          ),
-          ),
+          ),*/
         ],
       ),
     );
